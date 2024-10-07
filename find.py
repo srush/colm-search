@@ -8,7 +8,7 @@ import pandas as pd
 data = pd.read_csv("transformed_data.csv")
 
 # Create the Streamlit app
-st.title("Poster Search by Name")
+st.title("COLM Poster Search")
 
 # Create a search box
 search_term = st.text_input("Enter a name to search for:")
@@ -23,6 +23,7 @@ if search_term:
         for _, row in filtered_data.iterrows():
             st.write(f"Poster: {row['Session Title']}")
             st.write(f"Date: {row['Date']}")
+            st.write(f"Time: {row['Time Start']} - {row['Time End']}")
             st.write(f"Authors: {row['Authors']}")
             st.write("---")
     else:
